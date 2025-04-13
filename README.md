@@ -20,6 +20,40 @@ Instead, I used **CDN links** to include both React and ReactDOM directly in the
 
 **CDN (Content Delivery Network)** is a globally distributed network of servers that deliver static content (like JavaScript libraries) quickly and efficiently.
 
+---
+
+# 🌐 Understanding `crossorigin` in Script Tags
+
+---
+
+## 🔐 What is `crossorigin`?
+
+The `crossorigin` attribute in your `<script>` tag is related to **CORS** — **Cross-Origin Resource Sharing**.
+
+It tells the browser how to handle **resources loaded from a different origin** (domain), such as a **CDN (Content Delivery Network)**.
+
+---
+
+## 📦 Why It Matters
+
+When you load scripts or resources from another domain (like `unpkg.com` or `cdnjs.cloudflare.com`), the browser has to make decisions about **security and access**.
+
+This is especially important when your project interacts with:
+
+- 🔄 **Fetch requests**
+- 🖼️ **Canvas APIs**
+- 🛡️ **Security policies**
+- 🧪 **Error tracking and stack traces**
+
+---
+
+## 🧪 Example with React CDN
+
+```html
+<script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+
 Using a CDN:
 - ⚡ Makes the app faster by loading libraries from the nearest server.
 - 🛠️ Eliminates the need to install packages locally.
